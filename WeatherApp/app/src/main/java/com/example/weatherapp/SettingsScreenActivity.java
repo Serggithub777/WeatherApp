@@ -46,51 +46,15 @@ public class SettingsScreenActivity extends AppCompatActivity {
         saveChanges.setOnClickListener(listenerSaveChanges);
     }
 
-
-    public void checkBoxShowWindClicked(View view) {
-        if (checkBoxShowWind.isChecked()) {
-            checkBoxShowWindEnabled = ENABLED;
-            makeToast("CheckBox Wind Speed enabled");
-        }else{
-            checkBoxShowWindEnabled = DISABLED;
-            makeToast("CheckBox Wind Speed disabled");
-        }
-    }
-    public void checkBoxShowPressureClicked(View view) {
-        if (checkBoxShowPressure.isChecked()) {
-            checkBoxShowPressureEnabled = ENABLED;
-            makeToast("CheckBox Air Pressure enabled");
-        }else{
-            checkBoxShowPressureEnabled = DISABLED;
-            makeToast("CheckBox Air Pressure disabled");
-        }
-    }
-
-    public void checkBoxShowRainProbablyClicked(View view) {
-        if (checkBoxShowRainProbably.isChecked()) {
-            checkBoxShowRainProbablyEnabled = ENABLED;
-            makeToast("CheckBox Rain Possibility enabled");
-        }else{
-            checkBoxShowRainProbablyEnabled = DISABLED;
-            makeToast("CheckBox Rain Possibility disabled");
-        }
-    }
-
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("wind",checkBoxShowWindEnabled);
-        outState.putString("pressure",checkBoxShowPressureEnabled);
-        outState.putString("probably", checkBoxShowRainProbablyEnabled);
         makeToast("Сохранение данных CheckBox");
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        checkBoxShowWindEnabled = savedInstanceState.getString("wind");
-        checkBoxShowPressureEnabled = savedInstanceState.getString("pressure");
-        checkBoxShowRainProbablyEnabled = savedInstanceState.getString("probably");
         makeToast("Восстановление данных CheckBox");
     }
 
@@ -98,7 +62,4 @@ public class SettingsScreenActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
         Log.d(MY_LOG, msg);
     }
-
-
-
 }
