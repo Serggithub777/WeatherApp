@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="textViewNow">now:</string>
+    <string name="textViewCityName">Petropavlovsk - Kamchatsky</string>
+    <string name="textVewTemperature">+12</string>
+    <string name="textViewTempMesur">C</string>
+    <string name="textViewAngle">o</string>
+    <string name="textViewTextWeather">cloudy</string>
+    <string name="textViewTime">12 : 12</string>
+    <string name="textViewDayOfWeek">Sunday</string>
+    <string name="textViewDate">12 april 2020</string>
+    <string name="show_weather_icons">Show Weather Icons</string>
+    <string name="textViewEnterCity">Enter City</string>
+    <string name="textvVewRecentCities">recent cities</string>
+    <string name="buttonShowWeather">Show Weather</string>
+    <string name="buttonSettings">settings</string>
+    <string name="textViewAddWeatherParam">"show additional: "</string>
+    <string name="checkBoxShowWind">wind speed</string>
+    <string name="checkBoxShowPressure">air pressure</string>
+    <string name="checkBoxShowRainProbably">rain possibility</string>
+    <string name="buttonSaveChanges">Save Changes</string>
+    <string name="startToast">App started!</string>
+    <string name="doubleClickBackExit">"Press once again to exit!"</string>
+    <string name="textviewWindValue">3</string>
+    <string name="textviewWindSpeedMesur">m/s</string>
+    <string name="textviewPressureValue">761</string>
+    <string name="textviewPressurMesur">mm Hg</string>
+    <string name="textviewPobablyValue">78</string>
+    <string name="textviewProbablyMesur">%</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="textViewNow">сейчас:</string>
+    <string name="textViewCityName">Петропавловск - Камчатский</string>
+    <string name="textVewTemperature">+12</string>
+    <string name="textViewTempMesur">C</string>
+    <string name="textViewAngle">o</string>
+    <string name="textViewTextWeather">облачно</string>
+    <string name="textViewTime">12 : 12</string>
+    <string name="textViewDayOfWeek">Воскресенье</string>
+    <string name="textViewDate">12 апрель 2020</string>
+    <string name="show_weather_icons">Показ иконок погоды</string>
+    <string name="textViewEnterCity">Введите название города</string>
+    <string name="textvVewRecentCities">вы смотрели</string>
+    <string name="buttonShowWeather">Показать погоду</string>
+    <string name="buttonSettings">установки</string>
+    <string name="textViewAddWeatherParam">показывать дополнительно:</string>
+    <string name="checkBoxShowWind">скорость ветра</string>
+    <string name="checkBoxShowPressure">давление воздуха</string>
+    <string name="checkBoxShowRainProbably">вероятность дождя</string>
+    <string name="buttonSaveChanges">созранить изменения</string>
+    <string name="startToast">Приложение запущено!</string>
+    <string name="doubleClickBackExit">Нажмите еще раз для выхода из приложения</string>
+</resources>
