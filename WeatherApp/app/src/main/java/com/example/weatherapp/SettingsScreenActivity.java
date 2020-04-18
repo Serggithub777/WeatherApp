@@ -38,7 +38,7 @@ public class SettingsScreenActivity extends AppCompatActivity {
         listenerSaveChanges = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingsScreenActivity.this, ScreenMainActivity.class);
+                Intent intent = new Intent(SettingsScreenActivity.this, MainActivity.class);
                 startActivity(intent);
                 Log.d(MY_LOG, "SettingsScreenActivity onClick() SaveChanges");
             }

@@ -27,4 +27,5 @@
     <string name="textviewPressurMesur">mm Hg</string>
     <string name="textviewPobablyValue">78</string>
     <string name="textviewProbablyMesur">%</string>
+    <string name="editTextEnterCity">editTextEnterCity</string>
 </resources>

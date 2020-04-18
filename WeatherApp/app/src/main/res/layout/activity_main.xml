@@ -7,14 +7,14 @@
     android:background="@drawable/rain_street_portrait">
 
     <EditText
-        android:id="@+id/textViewEnterCity"
+        android:id="@+id/editTextEnterCity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/white"
-        android:hint="@string/textViewEnterCity"
+        android:hint="@string/editTextEnterCity"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textColor="@android:color/white"
@@ -34,8 +34,9 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textViewEnterCity"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEnterCity" />
+        app:layout_constraintStart_toStartOf="@+id/editTextEnterCity"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEnterCity"
+        tools:ignore="UnknownId" />
 
     <Button
         android:id="@+id/buttonShowWeather"
