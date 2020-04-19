@@ -49,18 +49,6 @@ public class SettingsScreenActivity extends AppCompatActivity {
         saveChanges.setOnClickListener(listenerSaveChanges);
     }
 
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        makeToast("Сохранение данных CheckBox");
-    }
-
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        makeToast("Восстановление данных CheckBox");
-    }
-
     private void makeToast(String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
         Log.d(MY_LOG, msg);
