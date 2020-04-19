@@ -23,15 +23,12 @@ public class SettingsScreenActivity extends AppCompatActivity {
     private String checkBoxShowWindEnabled;
     private String checkBoxShowPressureEnabled;
     private String checkBoxShowRainProbablyEnabled;
-    private String temperatureMesuriment;
-
+    final SaveParametrs instance = SaveParametrs.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_settings);
         Log.d(MY_LOG, "SettingsScreenActivity onCreate()");
-
-        final SaveParametrs instance = SaveParametrs.getInstance();
 
         checkBoxShowWind = findViewById(R.id.checkBoxShowWind);
         checkBoxShowPressure = findViewById(R.id.checkBoxShowPressure);
@@ -47,6 +44,10 @@ public class SettingsScreenActivity extends AppCompatActivity {
             }
         };
         saveChanges.setOnClickListener(listenerSaveChanges);
+    }
+
+    public void onCheckBoxTempMesurClicked(View view) {
+
     }
 
     private void makeToast(String msg) {

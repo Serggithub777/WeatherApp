@@ -29,6 +29,6 @@
     <string name="textviewProbablyMesur">%</string>
     <string name="editTextEnterCity">EnterCity</string>
     <string name="textviewShowTempMesur">show temperature in:</string>
-    <string name="checkBoxSetTempCelcium">C</string>
-    <string name="checkboxSetTempFahren">F</string>
+    <string name="radioButtonSetTempCelcium">C</string>
+    <string name="radioButtonSetTempFahren">F</string>
 </resources>

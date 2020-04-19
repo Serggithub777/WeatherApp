@@ -17,8 +17,8 @@ public final class SaveParametrs {
         return temperatureMesuriment;
     }
 
-    public void setTemperatureMesuriment(String temperatureMesuriment) {
-        this.temperatureMesuriment = temperatureMesuriment;
+    public void setTemperatureMesuriment(String set) {
+        this.temperatureMesuriment = set;
     }
 
     private String temperatureMesuriment;
