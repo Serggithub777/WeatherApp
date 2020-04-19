@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener listenerClickShowWeather;
     private View.OnClickListener listenerClickSettings;
     private EditText editTextEnterCity;
+    private String cityName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +31,19 @@ public class MainActivity extends AppCompatActivity {
         editTextEnterCity = findViewById(R.id.editTextEnterCity);
         settings = findViewById(R.id.buttonSettings);
         showWeather = findViewById(R.id.buttonShowWeather);
+
         listenerClickShowWeather = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cityName = editTextEnterCity.getText().toString().trim();
                 Intent intent = new Intent(MainActivity.this, ScreenMainActivity.class);
-                String cityName = editTextEnterCity.getText().toString();
-                intent.putExtra(KEY_CITY_NAME, cityName);
-                startActivity(intent);
-                Log.d(MY_LOG, "MainActivity onClick() Show Weather");
+                if (cityName.isEmpty()) {
+                   makeToast("Enter city!");
+                } else {
+                    intent.putExtra(KEY_CITY_NAME, cityName);
+                    startActivity(intent);
+                    Log.d(MY_LOG, "MainActivity onClick() Show Weather");
+                }
             }
         };
 
@@ -46,13 +52,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SettingsScreenActivity.class);
                 startActivity(intent);
-                Log.d(MY_LOG, "MainActivity onClick() Settings");
+
             }
         };
 
         showWeather.setOnClickListener(listenerClickShowWeather);
         settings.setOnClickListener(listenerClickSettings);
 
+    }
+
+    private void makeToast(String msg) {
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+        Log.d(MY_LOG, msg);
     }
 }
 
