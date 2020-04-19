@@ -57,4 +57,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxShowRainProbably"
         app:layout_constraintVertical_bias="0.994" />
+    <TextView
+        android:id="@+id/textViewShowTempMesur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/textviewShowTempMesur"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxShowRainProbably" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSetTempCelcium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/checkBoxSetTempCelcium"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewShowTempMesur"
+        app:layout_constraintTop_toBottomOf="@+id/textViewShowTempMesur" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSetTempFahren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:text="@string/checkboxSetTempFahren"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBoxSetTempCelcium"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxSetTempCelcium" />
 </androidx.constraintlayout.widget.ConstraintLayout>
