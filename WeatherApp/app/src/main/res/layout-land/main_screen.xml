@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:textAlignment="center">
 
     <TextView
         android:id="@+id/textViewNow"
@@ -20,12 +21,13 @@
         android:id="@+id/textViewCityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/textViewCityName"
         android:textAlignment="center"
         android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,10 +36,10 @@
         android:layout_width="101dp"
         android:layout_height="83dp"
         android:layout_marginStart="64dp"
+        android:contentDescription="@string/show_weather_icons"
         app:layout_constraintStart_toStartOf="@+id/textViewNow"
         app:layout_constraintTop_toTopOf="@+id/textViewNow"
-        app:srcCompat="@drawable/cloudy_icon"
-        android:contentDescription="@string/show_weather_icons" />
+        app:srcCompat="@drawable/cloudy_icon" />
 
     <TextView
         android:id="@+id/textViewTemperature"
