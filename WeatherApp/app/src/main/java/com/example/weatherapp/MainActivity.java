@@ -1,5 +1,6 @@
 package com.example.weatherapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -20,14 +21,12 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener listenerClickSettings;
     private EditText editTextEnterCity;
     private String cityName;
-
+    private SaveParametrs instance = SaveParametrs.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (savedInstanceState == null) {
-            Toast.makeText(getApplicationContext(), R.string.startToast, Toast.LENGTH_SHORT).show();
-        }
+
         editTextEnterCity = findViewById(R.id.editTextEnterCity);
         settings = findViewById(R.id.buttonSettings);
         showWeather = findViewById(R.id.buttonShowWeather);
@@ -65,5 +64,18 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
         Log.d(MY_LOG, msg);
     }
-}
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_CITY_NAME, cityName);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Bundle s = getIntent().getExtras();
+        String cityName = s.toString();
+        editTextEnterCity.setText(cityName);
+    }
+}

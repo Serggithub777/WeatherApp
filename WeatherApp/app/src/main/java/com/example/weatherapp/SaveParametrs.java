@@ -9,19 +9,20 @@ public final class SaveParametrs {
     private String checkBoxShowWindEnabled;
     private String checkBoxShowPressureEnabled;
     private String checkBoxShowRainProbablyEnabled;
+    private String temperatureMesur;
 
     private SaveParametrs() {
 
     }
-    public String getTemperatureMesuriment() {
-        return temperatureMesuriment;
+    public String getTemperatureMesur() {
+        return temperatureMesur;
     }
 
-    public void setTemperatureMesuriment(String set) {
-        this.temperatureMesuriment = set;
+    public void setTemperatureMesur(String set) {
+        this.temperatureMesur = set;
     }
 
-    private String temperatureMesuriment;
+
 
 
     public String getCheckBoxShowWindEnabled() {
