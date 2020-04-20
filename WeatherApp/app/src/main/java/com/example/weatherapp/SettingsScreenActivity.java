@@ -44,6 +44,11 @@ public class SettingsScreenActivity extends AppCompatActivity {
 
         saveChanges = findViewById(R.id.buttonSaveChanges);
 
+        listenerSaveChanges();
+        saveChanges.setOnClickListener(listenerSaveChanges);
+    }
+
+    private void listenerSaveChanges() {
         listenerSaveChanges = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,15 +57,7 @@ public class SettingsScreenActivity extends AppCompatActivity {
                 Log.d(MY_LOG, "SettingsScreenActivity onClick() SaveChanges");
             }
         };
-        saveChanges.setOnClickListener(listenerSaveChanges);
     }
-
-    private void rapidlySetRadiobuttons() {
-        if (instance.getTemperatureMesur().equals("c")) {
-            radioButtonSetTempMesurCelcium.setChecked(true);
-        } else if (instance.getTemperatureMesur().equals("f"))
-            radioButtonSetTempMesurCelcium.setChecked(true);
-   }
 
     public void onCheckBoxTempMesurClicked(View view) {
         RadioButton clickedRadioButton = (RadioButton) view;

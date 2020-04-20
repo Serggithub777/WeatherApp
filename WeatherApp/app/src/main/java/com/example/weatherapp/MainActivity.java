@@ -31,6 +31,26 @@ public class MainActivity extends AppCompatActivity {
         settings = findViewById(R.id.buttonSettings);
         showWeather = findViewById(R.id.buttonShowWeather);
 
+        listenerClickShowWeather();
+        listenerClickSettings();
+
+        showWeather.setOnClickListener(listenerClickShowWeather);
+        settings.setOnClickListener(listenerClickSettings);
+
+    }
+
+    private void listenerClickSettings() {
+        listenerClickSettings = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SettingsScreenActivity.class);
+                startActivity(intent);
+
+            }
+        };
+    }
+
+    private void listenerClickShowWeather() {
         listenerClickShowWeather = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,19 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-
-        listenerClickSettings = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,SettingsScreenActivity.class);
-                startActivity(intent);
-
-            }
-        };
-
-        showWeather.setOnClickListener(listenerClickShowWeather);
-        settings.setOnClickListener(listenerClickSettings);
-
     }
 
     private void makeToast(String msg) {
