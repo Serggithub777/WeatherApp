@@ -36,19 +36,16 @@ public class SettingsScreenActivity extends AppCompatActivity {
         } else
             makeToast("SettingsScreenActivity omCreate() Повторный запуск!");
 
-        radioButtonSetTempMesurCelcium = findViewById(R.id.radioButtonSetTempMesurCelcium);
-        radioButtonSetTempMesurFahren = findViewById(R.id.radioButtonSetTempMesurFahren);
         checkBoxShowWind = findViewById(R.id.checkBoxShowWind);
         checkBoxShowPressure = findViewById(R.id.checkBoxShowPressure);
         checkBoxShowRainProbably = findViewById(R.id.checkBoxShowRainProbably);
-
-        saveChanges = findViewById(R.id.buttonSaveChanges);
 
         listenerSaveChanges();
         saveChanges.setOnClickListener(listenerSaveChanges);
     }
 
     private void listenerSaveChanges() {
+        saveChanges = findViewById(R.id.buttonSaveChanges);
         listenerSaveChanges = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +57,8 @@ public class SettingsScreenActivity extends AppCompatActivity {
     }
 
     public void onCheckBoxTempMesurClicked(View view) {
+        radioButtonSetTempMesurCelcium = findViewById(R.id.radioButtonSetTempMesurCelcium);
+        radioButtonSetTempMesurFahren = findViewById(R.id.radioButtonSetTempMesurFahren);
         RadioButton clickedRadioButton = (RadioButton) view;
         boolean checked = clickedRadioButton.isChecked();
         switch (view.getId()) {

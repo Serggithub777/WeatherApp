@@ -21,22 +21,20 @@ public class ScreenMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
-
-        textViewCityName = findViewById(R.id.textViewCityName);
-        textViewTempMesur = findViewById(R.id.textViewTempMesur);
-        instance = SaveParametrs.getInstance();
-
-        Bundle args = getIntent().getExtras();
-        setCityName(args);
+        setCityName();
         setTemperatureMesur();
     }
 
-    private void setCityName(Bundle args) {
+    private void setCityName() {
+        Bundle args = getIntent().getExtras();
+        textViewCityName = findViewById(R.id.textViewCityName);
         String cityName = args.getString(KEY_CITY_NAME);
         textViewCityName.setText(cityName);
     }
 
     private void setTemperatureMesur() {
+        textViewTempMesur = findViewById(R.id.textViewTempMesur);
+        instance = SaveParametrs.getInstance();
         String set = instance.getTemperatureMesur();
         if (set.equals("c")) {
             textViewTempMesur.setText("C");
