@@ -31,10 +31,6 @@ public class SettingsScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_settings);
-        if (savedInstanceState == null) {
-            makeToast("SettingsScreenActivity omCreate() Первый запуск!");
-        } else
-            makeToast("SettingsScreenActivity omCreate() Повторный запуск!");
 
         checkBoxShowWind = findViewById(R.id.checkBoxShowWind);
         checkBoxShowPressure = findViewById(R.id.checkBoxShowPressure);
@@ -51,7 +47,6 @@ public class SettingsScreenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SettingsScreenActivity.this, MainActivity.class);
                 startActivity(intent);
-                Log.d(MY_LOG, "SettingsScreenActivity onClick() SaveChanges");
             }
         };
     }
@@ -65,10 +60,12 @@ public class SettingsScreenActivity extends AppCompatActivity {
             case R.id.radioButtonSetTempMesurCelcium:
                 if (checked) {
                     instance.setTemperatureMesur("c");
+                    radioButtonSetTempMesurCelcium.setChecked(true);
                 }break;
             case R.id.radioButtonSetTempMesurFahren:
                 if (checked) {
                     instance.setTemperatureMesur("f");
+                    radioButtonSetTempMesurFahren.setChecked(true);
                 }break;
         }
     }

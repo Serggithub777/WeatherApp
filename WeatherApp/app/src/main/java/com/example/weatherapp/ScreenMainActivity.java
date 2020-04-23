@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.weatherapp.SaveParametrs.getInstance;
+
 public class ScreenMainActivity extends AppCompatActivity {
     private static final String KEY_CITY_NAME = "CITY_NAME";
     private static final String MY_LOG = "MyLog";
