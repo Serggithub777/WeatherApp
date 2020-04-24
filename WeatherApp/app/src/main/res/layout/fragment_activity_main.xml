@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/st_petersburg_rain"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/rain_street_portrait"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <EditText
         android:id="@+id/editTextEnterCity"
         android:layout_width="0dp"
