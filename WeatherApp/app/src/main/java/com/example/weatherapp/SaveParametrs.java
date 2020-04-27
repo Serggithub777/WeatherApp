@@ -1,6 +1,9 @@
 package com.example.weatherapp;
 
-public final class SaveParametrs {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public final class SaveParametrs implements Parcelable {
     public static final String MY_LOG = "MyLog";
     public static final String ENABLED = "Enabled";
     public static final String DISABLED = "Disabled";
@@ -14,6 +17,26 @@ public final class SaveParametrs {
     private SaveParametrs() {
 
     }
+
+    protected SaveParametrs(Parcel in) {
+        checkBoxShowWindEnabled = in.readString();
+        checkBoxShowPressureEnabled = in.readString();
+        checkBoxShowRainProbablyEnabled = in.readString();
+        temperatureMesur = in.readString();
+    }
+
+    public static final Creator<SaveParametrs> CREATOR = new Creator<SaveParametrs>() {
+        @Override
+        public SaveParametrs createFromParcel(Parcel in) {
+            return new SaveParametrs(in);
+        }
+
+        @Override
+        public SaveParametrs[] newArray(int size) {
+            return new SaveParametrs[size];
+        }
+    };
+
     public String getTemperatureMesur() {
         return temperatureMesur;
     }
@@ -58,5 +81,18 @@ public final class SaveParametrs {
             }
         }return instance;
 
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(checkBoxShowWindEnabled);
+        dest.writeString(checkBoxShowPressureEnabled);
+        dest.writeString(checkBoxShowRainProbablyEnabled);
+        dest.writeString(temperatureMesur);
     }
 }
