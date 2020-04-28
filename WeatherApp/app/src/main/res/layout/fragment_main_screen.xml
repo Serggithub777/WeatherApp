@@ -41,11 +41,10 @@
         app:srcCompat="@drawable/cloudy_icon" />
 
     <TextView
-        android:id="@+id/textViewTemperature"
+        android:id="@+id/textViewItemTemperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="128dp"
         android:text="@string/textVewTemperature"
         android:textSize="62sp"
         android:textStyle="bold"
@@ -69,8 +68,8 @@
         android:layout_height="wrap_content"
         android:text="@string/textViewAngle"
         android:textSize="36sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewTemperature"
-        app:layout_constraintTop_toTopOf="@+id/textViewTemperature" />
+        app:layout_constraintStart_toEndOf="@+id/textViewItemTemperature"
+        app:layout_constraintTop_toTopOf="@+id/textViewItemTemperature" />
 
     <TextView
         android:id="@+id/textViewTextWeather"
@@ -128,7 +127,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTemperature" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewItemTemperature" />
 
     <TextView
         android:id="@+id/textViewAirPressure"

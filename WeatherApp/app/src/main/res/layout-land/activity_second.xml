@@ -13,13 +13,15 @@
         android:name="com.example.weatherapp.fragments.ScreenMainFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_main_screen" />
 
     <fragment
         android:id="@+id/week_forecast_fragment"
         android:name="com.example.weatherapp.fragments.WeekForecastFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_week_forecast" />
 
 </LinearLayout>
