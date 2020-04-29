@@ -9,4 +9,9 @@
         <item>Sa</item>
         <item>Su</item>
     </string-array>
+    <string-array name="recentCities">
+        <item>Moscow</item>
+        <item>St.-Petersburg</item>
+        <item>Petropavlovsk-Kamchatsky</item>
+    </string-array>
 </resources>
