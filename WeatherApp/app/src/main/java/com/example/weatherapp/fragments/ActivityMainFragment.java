@@ -2,6 +2,7 @@ package com.example.weatherapp.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,8 @@ import android.widget.Toast;
 
 import com.example.weatherapp.R;
 import com.example.weatherapp.aktivities.SecondActivity;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,16 +67,24 @@ public class ActivityMainFragment extends Fragment {
         String[] recentCities = getResources().getStringArray(R.array.recentCities);
         LayoutInflater layoutInflater = getLayoutInflater();
 
-        for (int i = 0; i < recentCities.length ; i++) {
-            String city = recentCities[i];
-         View viewRecentCityItem = layoutInflater.inflate(R.layout.recent_city_list_item,
-                                            viewRecentCitiesLinearLayout, false);
+        for (int i = 0; i < recentCities.length; i++) {
+            final String city = recentCities[i];
+            View viewRecentCityItem = layoutInflater.inflate(R.layout.recent_city_list_item,
+                    viewRecentCitiesLinearLayout, false);
             TextView textView = viewRecentCityItem.findViewById(R.id.textViewRecentCityItem);
             textView.setText(city);
             viewRecentCitiesLinearLayout.addView(viewRecentCityItem);
+
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EditText cityName = Objects.requireNonNull(getView()).
+                            findViewById(R.id.editTextEnterCity);
+                    cityName.setText(city);
+                }
+            });
+
         }
-
-
     }
 
     private void createButtonShowWeatherListener() {

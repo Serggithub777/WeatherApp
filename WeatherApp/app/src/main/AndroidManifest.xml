@@ -10,8 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".aktivities.SecondActivity"></activity>
-        <activity android:name=".aktivities.MainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity android:name=".aktivities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

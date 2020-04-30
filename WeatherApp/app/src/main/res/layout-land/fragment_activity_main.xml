@@ -2,26 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:background="@drawable/st_petersburg_rain"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <EditText
         android:id="@+id/editTextEnterCity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
+        android:autofillHints="@string/editTextEnterCity"
         android:backgroundTint="@android:color/white"
         android:hint="@string/editTextEnterCity"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
-        android:autofillHints="@string/editTextEnterCity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,11 +40,24 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEnterCity"
         tools:ignore="UnknownId" />
 
+    <LinearLayout
+        android:id="@+id/recent_cities_List_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toEndOf="@+id/textViewRecentCities"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEnterCity" />
+
     <Button
         android:id="@+id/buttonShowWeather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="48dp"
         android:text="@string/buttonShowWeather"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

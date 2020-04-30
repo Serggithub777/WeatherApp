@@ -71,12 +71,13 @@
         app:layout_constraintTop_toBottomOf="@+id/checkBoxShowRainProbably" />
 
     <RadioGroup
+        android:id="@+id/radioGroupSetTempMesur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginTop="16dp"
-        android:orientation="horizontal"
         android:checkedButton="@id/radioButtonSetTempMesurCelcium"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/textViewShowTempMesur"
         app:layout_constraintTop_toBottomOf="@+id/textViewShowTempMesur">
 
@@ -84,7 +85,6 @@
             android:id="@+id/radioButtonSetTempMesurCelcium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onCheckBoxTempMesurClicked"
             android:text="@string/radioButtonSetTempCelcium" />
 
         <RadioButton
@@ -92,7 +92,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="106dp"
-            android:onClick="onCheckBoxTempMesurClicked"
             android:text="@string/radioButtonSetTempFahren" />
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

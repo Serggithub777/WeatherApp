@@ -68,9 +68,8 @@
         android:id="@+id/recent_cities_List_linear_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14sp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRecentCities"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textViewRecentCities" />
 </androidx.constraintlayout.widget.ConstraintLayout>
