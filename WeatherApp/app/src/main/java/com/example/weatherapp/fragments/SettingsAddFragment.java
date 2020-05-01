@@ -11,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.weatherapp.R;
 import com.example.weatherapp.SaveParametrs;
@@ -32,8 +34,6 @@ public class SettingsAddFragment extends Fragment {
     private CheckBox checkBoxAirPressure;
     private CheckBox checkBoxRainPossibility;
     private RadioGroup radioButtonsSetTempMesur;
-    private RadioButton radioButtonSetTempMesurCelcium;
-    private RadioButton radioButtonSetTempMesurFahren;
 
     public SettingsAddFragment() {
         // Required empty public constructor
@@ -57,38 +57,70 @@ public class SettingsAddFragment extends Fragment {
         onCheckBoxAirPressureClicked(checkBoxAirPressure);
         checkBoxRainPossibility = view.findViewById(R.id.checkBoxShowRainProbably);
         onCheckBoxRainPossibilityClicked(checkBoxRainPossibility);
-
+        radioButtonsSetTempMesur = view.findViewById(R.id.radioGroupSetTempMesur);
+        onRadioButtonClicked(radioButtonsSetTempMesur);
     }
 
 
     private void onCheckBoxWindSpeedClicked(CheckBox checkBoxWindSpeed) {
+        checkBoxWindSpeed.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    checkBoxShowWindEnabled = ENABLED;
+                    getToast("wind speed " + checkBoxShowWindEnabled);
+                } else checkBoxShowWindEnabled = DISABLED;
+                getToast("wind speed " + checkBoxShowWindEnabled);
+            }
+        });
 
-        if (checkBoxWindSpeed.isChecked()){
-            checkBoxShowWindEnabled = ENABLED;
-        } else checkBoxShowWindEnabled = DISABLED;
-    }
+   }
     private void onCheckBoxAirPressureClicked(CheckBox checkBoxAirPressure) {
-        if (checkBoxAirPressure.isChecked()) {
-            checkBoxShowPressureEnabled = ENABLED;
-        } else checkBoxShowPressureEnabled = DISABLED;
+        checkBoxAirPressure.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    checkBoxShowPressureEnabled = ENABLED;
+                    getToast("air pressure " + checkBoxShowPressureEnabled);
+                } else checkBoxShowPressureEnabled = DISABLED;
+                getToast("air pressure " + checkBoxShowPressureEnabled);
+            }
+        });
+
     }
     private void onCheckBoxRainPossibilityClicked(CheckBox checkBoxRainPossibility) {
-        if (checkBoxRainPossibility.isChecked()) {
-            checkBoxShowRainProbablyEnabled = ENABLED;
-        } else checkBoxShowRainProbablyEnabled = DISABLED;
+        checkBoxRainPossibility.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    checkBoxShowRainProbablyEnabled = ENABLED;
+                    getToast("rain possibility " + checkBoxShowRainProbablyEnabled);
+                } else checkBoxShowRainProbablyEnabled = DISABLED;
+                getToast("rain possibility " + checkBoxShowRainProbablyEnabled);
+            }
+        });
+
     }
 
-    private void onRadioButtonClicked(RadioButton radioButton) {
-        boolean checked = radioButton.isChecked();
-        switch (radioButton.getId()) {
-            case R.id.radioButtonSetTempMesurCelcium:
-                if (checked) {
-                    temperatureMesur = "C";
-                }break;
-            case R.id.radioButtonSetTempMesurFahren:
-                if (checked) {
-                    temperatureMesur = "F";
-                }break;
-        }
+    private void onRadioButtonClicked(RadioGroup radioGroup) {
+       radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(RadioGroup group, int checkedId) {
+               switch (checkedId) {
+                   case R.id.radioButtonSetTempMesurCelcium:
+                       temperatureMesur = "C";
+                       getToast(temperatureMesur);
+                       break;
+                   case R.id.radioButtonSetTempMesurFahren:
+                       temperatureMesur = "F";
+                       getToast(temperatureMesur);
+                       break;
+               }
+           }
+       });
+    }
+
+    private void getToast(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 }

@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.weatherapp.fragments.ActivityMainFragment;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         } else{
             FragmentTransaction fragmentTransaction = fm.beginTransaction().replace(R.id.main_activity_container, new SettingsAddFragment());
         }
-    }}
+    }
+}
 
 
